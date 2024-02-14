@@ -18,6 +18,11 @@ $(document).ready(async e =>{
     FichierDropdown(fileInFolder);
 });
 
+$(window).on('beforeunload', async e => { 
+    let msg = await myFetch('delete.php');
+    return msg;
+});
+
 
 // upload les nouveaux fichiers dans le dossier du projet
 $('.fichier').on('change', (e => {

@@ -46,7 +46,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
 
       // if everything is ok, try to upload file
         if (move_uploaded_file($file_tmp_name, $target_file)) {
-          $array["msg"] .= 'The move_uploaded_file fonction pass! ';
+          $array["msg"] .= 'La fonction move_uploaded_file a réussi! ';
         }
         else {
           $array['error'] .=  "Désolé, une erreur est survenu. " . $file['error'] . '     .....     ';

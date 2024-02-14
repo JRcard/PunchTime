@@ -1,0 +1,49 @@
+body{
+    background-color: rgb(0, 0, 0);
+    color:aliceblue;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    /* font-family: 'brush Script MT', 'Courier New', 'sans-serif';
+    font-size: 40px; */
+}
+h1{
+    font: 90px 'brush Script MT';
+}
+label{
+    font-weight: bold;
+    padding: 10px;
+}
+.formulaire{
+    padding: 10px;
+}
+.formulaire #file{
+    border: 2px solid 'white';
+}
+.tableRow{
+    margin: 15px auto;
+}
+.affiche p{
+    font-weight: bolder;
+    text-decoration: underline;
+}
+#lieux{
+    background-color: rgb(184, 234, 233);
+    font: 'courier New' ;
+    font-weight: bolder;
+    margin: 15px auto;
+}
+#files{
+    background-color: rgb(222, 242, 111);
+    font: 'courier New';
+    font-weight: bold;
+    margin: 15px auto;
+}
+#liste option{
+    text-align: center;
+    background-color: black;
+}
+.horaire{
+    background-color: rgb(255, 255, 255);
+    color:rgb(0, 0, 0);
+}

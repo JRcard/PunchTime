@@ -18,8 +18,9 @@
             <label for="file">Téléversez la Timeline ici (JSON)</label>
             <input class='fileInput' id="file" name="" type="file" multiple>
             <button class='submit' type="button">Export PDF</button>
+            <button class='delete' type="button">Effacer les fichiers</button>
         </form>
-
+        
         <div id="err"></div>
     </div>
     <div class="container-fluid">

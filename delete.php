@@ -1,13 +1,13 @@
 <?php      
-
+$msg = '';
 foreach (glob('./files/*.json') as $file){
     $status = unlink($file);    
     if($status){  
-        echo "File deleted successfully";    
+        $msg = "File deleted successfully";    
     }
     else{  
-        echo "Sorry!";    
+        $msg = "Sorry!";    
     } 
 }      
-
+echo json_encode($msg);
 ?>  

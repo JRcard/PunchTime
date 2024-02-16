@@ -4,7 +4,6 @@ import {dropdown, FichierDropdown, affiche} from './modules/affiche.js';
 import { savePDF } from './modules/export.js';
 
 let filesFolder = './files/';
-let fileInFolder;
 let newFiles;
 let fileDataContent;
 let horaire;
@@ -14,13 +13,24 @@ let loaded = true;
 
 
 $(document).ready(async e =>{
-    fileInFolder = await myFetch('getFolder.php');
-    FichierDropdown(fileInFolder);
+    // reset the files folder.
+    await myFetch('delete.php');
+    $('.entete').empty();
+    $('.affiche').empty();
+    $('.choixLieux').remove();
+    $('.choixFichier').remove();
 });
 
-$(window).on('beforeunload', async e => { 
-    let msg = await myFetch('delete.php');
-    return msg;
+// enlève les fichiers du dossier files manuellement.
+$('.delete').on('click', async e => { 
+    if(confirm("Vous etes sur le point de vider le dossier contenant les fichiers que vous venez d'importer. Confirmez.")){
+        let msg = await myFetch('delete.php');
+        $('.entete').empty();
+        $('.affiche').empty();
+        $('.choixLieux').remove();
+        $('.choixFichier').remove();
+        console.log('delete: ' + msg);
+    }
 });
 
 

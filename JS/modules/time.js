@@ -4,13 +4,12 @@
 ////////////////////////
 
 function setDate(t){
-    let jourInt = t.getDay();
-    let date = t.getDate();
-    let moisInt = t.getMonth();
-    let annee = t.getFullYear();
-    let jour = {0:'Dim', 1:'Lun', 2:'Mar', 3:'Mer', 4:'Jeu', 5:'Ven', 6:'Sam'};
-    let mois = {0:'Jan', 1:'Fev', 2:'Mar', 3:'Avr', 4:'Mai', 5:'Juin', 6:'Juil', 7:'Aout', 8:'Sept', 9:'Oct', 10:'Nov', 11:'Dec'};
-    return jour[jourInt] + ', ' + String(date) + ' ' + mois[moisInt] + ' ' + String(annee);
+    let jour = ['Dim', 'Lun', 'Mar', 'Mer', 'Jeu', 'Ven', 'Sam'][t.getDay()];
+    let date = String(t.getDate());
+    let mois = ['Jan', 'Fev', 'Mar', 'Avr', 'Mai', 'Juin', 'Juil', 'Aout', 'Sept', 'Oct', 'Nov', 'Dec'][t.getMonth()];
+    let annee = String(t.getFullYear());
+
+    return jour + ', ' + date + ' ' + mois + ' ' + annee;
 
 };
 

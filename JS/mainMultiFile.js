@@ -3,23 +3,23 @@ import {mapLieux, lieuChoisi} from './modules/map.js';
 import {dropdown, FichierDropdown, affiche} from './modules/affiche.js';
 import { savePDF } from './modules/export.js';
 
-let filesFolder = './files/';
-let newFiles;
-let fileDataContent;
-let horaire;
-let lesLieux;
-let lieu;
-let loaded = true;
-
 
 $(document).ready(async e =>{
+    let filesFolder = './files/';
+    let newFiles;
+    let fileDataContent;
+    let horaire;
+    let lesLieux;
+    let lieu;
+    let loaded = true;
+
     // reset the files folder.
     await myFetch('delete.php');
     $('.entete').empty();
     $('.affiche').empty();
     $('.choixLieux').remove();
     $('.choixFichier').remove();
-});
+
 
 // enlève les fichiers du dossier files manuellement.
 $('.delete').on('click', async e => { 
@@ -99,7 +99,10 @@ $('#lieux').on('change', (() => {
 
 // Export PDF
 $('.submit').on('click', (e =>{
+    try{
         savePDF(horaire, lieu);
+    }
+    catch(e) {alert('Vous devez choisir un lieu. Impossible d\'exporter un fichier vide.');}
     })
 );
 
@@ -108,3 +111,5 @@ async function myFetch(file, opts){
     let data = await reponse.json();
     return data;
 };
+
+});

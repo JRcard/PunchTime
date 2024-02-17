@@ -31,7 +31,7 @@
                 </select> 
             </div>
             <div class="col-md-4">
-                <select class="form-select text-center text-uppercase" id="lieux" name="lieux">
+                <select class="form-control text-center text-uppercase" id="lieux" name="lieux">
                     <option selected>Choisi un lieu</option>
                 </select> 
             </div>
